@@ -22,7 +22,7 @@ const Navbar = () => {
 
   return (
     <nav className="navbar">
-      <h1 className="logo">Steven's Skateboards</h1>
+      <h1 className="logo">FurFeed</h1>
       <div className="nav-buttons">
         <Link to="/" className="nav-button">
           Home

@@ -3,30 +3,29 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 
 const Home = () => {
-  const [featuredSkateboards, setFeaturedSkateboards] = useState([]);
+  const [homeFeed, setHomeFeed] = useState([]);
   const [error, setError] = useState("");
 
   useEffect(() => {
-    const fetchFeaturedSkateboards = async () => {
+    const fetchHomeFeed = async () => {
       try {
         const response = await axios.get(
-          `https://skateboard-store-2.onrender.com/api/skateboards`
+          // `NEED TO FILL OUT `
         );
-        setFeaturedSkateboards(response.data.slice(0, 3)); // Limit to 3 featured skateboards
+        setHomeFeed(response.data.slice(0, 3)); // Limit to 3 featured skateboards
       } catch (err) {
-        console.error("Error fetching skateboards:", err);
-        setError("Failed to load featured skateboards.");
+        console.error("Error: 420!", err);
+        setError("Error: 420");
       }
     };
 
-    fetchFeaturedSkateboards();
+    fetchHomeFeed();
   }, []);
 
   return (
     <div className="home-container">
       <div className="hero-section">
-        <h1>Welcome to Steven's Skateboards</h1>
-        <p>Your one-stop shop for all your skateboarding needs!</p>
+        <h1>Home</h1>
       </div>
     </div>
   );
